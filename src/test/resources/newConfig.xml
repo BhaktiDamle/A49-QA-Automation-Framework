@@ -2,57 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="newConfig">
-
     <test name="Homework18Tests" preserve-order="false">
+
         <classes>
-            <class name ="Homework18">
+            <class name="Homework18">
 
-                <methods>
-                    <include name ="setupClass()"/>
-
-                </methods>
-                <methods>
-                    <include name ="launchBrowser()"/>
-
-                </methods>
-
-
-                <methods>
-                    <include name ="navigateToPage()"/>
-
-                </methods>
-
-                <methods>
-
-                    <include name ="provideEmail()"/>
-
-                </methods>
-
-                <methods>
-
-                    <include name ="providePassword()"/>
-
-                </methods>
-                <methods>
-
-                    <include name ="clickSubmit()"/>
-                </methods>
-
-
-                <methods>
-
-                    <include name ="playSongTest()"/>
-                </methods>
-
-                <methods>
-
-                    <include name ="isSongPlaying()"/>
-                </methods>
-
-                <methods>
-
-                    <include name ="closeBrowser()"/>
-                </methods>
             </class>
         </classes>
     </test>
