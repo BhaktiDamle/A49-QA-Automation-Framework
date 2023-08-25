@@ -19,7 +19,7 @@ public class Homework19 extends BaseTest{
     public void deletePlaylist() throws InterruptedException{
 
 
-        String playlistDeletedMessage ="Deleted Playlist";
+        String playlistDeletedMessage ="Deleted playlist";
 
 
 

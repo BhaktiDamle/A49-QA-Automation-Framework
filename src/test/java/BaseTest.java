@@ -61,7 +61,7 @@ public class BaseTest {
 
     public void clickMyPlaylist() throws InterruptedException{
 
-        WebElement myPlayListElement = driver.findElement(By.xpath("//a[@href='#!/playlist/68172']"));
+        WebElement myPlayListElement = driver.findElement(By.cssSelector(".playlist:nth-child(3)"));
         myPlayListElement.click();
         Thread.sleep(2000);
 
