@@ -18,21 +18,14 @@ public class Homework19 extends BaseTest{
     @Test
     public void deletePlaylist() throws InterruptedException{
 
-
         String playlistDeletedMessage ="Deleted playlist";
-
-
-
-
         provideEmail("bhakti.damle@testpro.io");
         providePassword("Mangodesk234!");
         clickSubmit();
         clickMyPlaylist();
         clickDeleteMyPlaylist();
         Assert.assertTrue(getDeletedPlaylistNotification().contains(playlistDeletedMessage));
-
         }
-
         }
 
 

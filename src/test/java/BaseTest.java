@@ -36,38 +36,29 @@ public class BaseTest {
         url = BaseURL;
         driver.get(url);
             }
-
     // Helper Methods
-
     public static void provideEmail(String email) {
         WebElement emailField = driver.findElement(By.xpath("//input[@type='email']"));
         emailField.clear();
         emailField.sendKeys(email);
     }
-
     public static void providePassword(String password) {
         WebElement passwordField = driver.findElement(By.xpath("//input[@type='password']"));
         passwordField.clear();
         passwordField.sendKeys(password);
     }
-
     public static void clickSubmit() throws InterruptedException {
         WebElement submitButton = driver.findElement(By.xpath("//button[@type='submit']"));
         submitButton.click();
         Thread.sleep(2000);
-
-
     }
-
     public void clickMyPlaylist() throws InterruptedException{
 
-        WebElement myPlayListElement = driver.findElement(By.cssSelector(".playlist:nth-child(3)"));
+        WebElement myPlayListElement = driver.findElement(By.xpath("//li[@class='playlist playlist']"));
         myPlayListElement.click();
         Thread.sleep(2000);
 
     }
-
-
     public void clickDeleteMyPlaylist(){
 
         WebElement clickDeleteMyPlaylistElement = driver.findElement(By.xpath("//button[@class='del btn-delete-playlist']"));
