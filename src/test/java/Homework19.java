@@ -29,7 +29,6 @@ public class Homework19 extends BaseTest{
         clickSubmit();
         clickMyPlaylist();
         clickDeleteMyPlaylist();
-        confirmDelete();
         Assert.assertTrue(getDeletedPlaylistNotification().contains(playlistDeletedMessage));
 
         }

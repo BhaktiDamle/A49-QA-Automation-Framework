@@ -61,7 +61,7 @@ public class BaseTest {
 
     public void clickMyPlaylist() throws InterruptedException{
 
-        WebElement myPlayListElement = driver.findElement(By.xpath("//a[@href='#!/playlist/68171']"));
+        WebElement myPlayListElement = driver.findElement(By.xpath("//a[@href='#!/playlist/68172']"));
         myPlayListElement.click();
         Thread.sleep(2000);
 
@@ -74,11 +74,7 @@ public class BaseTest {
         clickDeleteMyPlaylistElement.click();
     }
 
-    public void confirmDelete(){
-        WebElement messageOkElement = driver.findElement(By.xpath("//button[@class='ok']"));
-        messageOkElement.click();
 
-    }
 
     public String getDeletedPlaylistNotification() {
 
