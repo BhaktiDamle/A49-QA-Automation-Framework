@@ -7,6 +7,10 @@ import org.testng.annotations.Test;
 public class PracticeContextClick extends BaseTest {
 
     @Test
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     public void ContextClick() {
 
        provideEmail("bhakti.damle@testpro.io");
