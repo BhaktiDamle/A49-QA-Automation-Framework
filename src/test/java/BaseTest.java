@@ -20,7 +20,9 @@ public class BaseTest {
 
     public WebDriver driver;
 
-    public String url =" https://qa.koel.app/";
+    public String url = " https://qa.koel.app/";
+
+    public WebDriverWait wait;
 
     @BeforeSuite
 
@@ -29,6 +31,7 @@ public class BaseTest {
     }
 
     @BeforeMethod
+    @Parameters({"BaseURL"})
 
     public void launchBrowser(String BaseURL) {
         ChromeOptions options = new ChromeOptions();
@@ -36,7 +39,13 @@ public class BaseTest {
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-notifications");
         driver = new ChromeDriver(options);
+        url = BaseURL;
+        navigateToPage();
+    }
 
+    public void navigateToPage() {
+
+        driver.get(url);
     }
 
     @AfterMethod

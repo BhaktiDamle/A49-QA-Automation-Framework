@@ -17,8 +17,4 @@ public class BasePage {
         actions = new Actions(driver);
 }
 
-    public void navigateToPage(String url) {
-        driver.get(url);
-    }
-
 }

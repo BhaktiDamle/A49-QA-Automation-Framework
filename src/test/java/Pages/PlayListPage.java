@@ -9,11 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import java.util.List;
 
+
 public class PlayListPage extends BasePage {
 
     public String newPlaylistName = "MyRenamedPlaylist";
 
-    public PlaylistPage(WebDriver driver) {
+        public PlayListPage(WebDriver driver) {
         super(driver);
     }
 
