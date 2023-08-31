@@ -15,13 +15,13 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    public static WebDriver driver = null;
+    public static WebDriver driver;
 
     public static String url ="";
 
     public static WebDriverWait wait;
 
-    public static Actions actions = null;
+    public static Actions actions;
 
 
 
@@ -59,7 +59,7 @@ emailField.sendKeys(email);
 
 public void providePassword(String password){
 
-WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='password'']")));
+WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='password']")));
 passwordField.clear();
 passwordField.sendKeys(password);
 

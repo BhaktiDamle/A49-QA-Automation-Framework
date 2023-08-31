@@ -6,28 +6,29 @@ import org.testng.annotations.Test;
 
 public class PracticeContextClick extends BaseTest {
 
+    @Test
     public void ContextClick() {
 
-        provideEmail("bhakti.damle@testpro.io");
+       provideEmail("bhakti.damle@testpro.io");
         providePassword("Mangodesk234!");
         clickSubmit();
         clickAllSongs();
         contextClickFirstSong();
     }
 
-    @Test
+
 
     public void clickAllSongs() {
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("li a.songs")));
-        WebElement clickAllSongsElement = driver.findElement(By.xpath("li a.songs"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li a.songs")));
+        WebElement clickAllSongsElement = driver.findElement(By.cssSelector("li a.songs"));
         clickAllSongsElement.click();
     }
 
     public void contextClickFirstSong() {
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".all-songs tr.song-item:nth child[1]")));
-        WebElement firstSongElement = driver.findElement(By.cssSelector(".all-songs tr.song-item:nth child[1]"));
-        actions.contextClick(firstSongElement);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#songsWrapper tr:nth-child(1) td.title")));
+        WebElement firstSongElement = driver.findElement(By.cssSelector("#songsWrapper tr:nth-child(1) td.title"));
+        actions.contextClick(firstSongElement).perform();
     }
 }
