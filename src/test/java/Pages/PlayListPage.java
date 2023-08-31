@@ -11,6 +11,8 @@ import java.util.List;
 
 public class PlayListPage extends BasePage {
 
+    public String newPlaylistName = "MyRenamedPlaylist";
+
     public PlaylistPage(WebDriver driver) {
         super(driver);
     }

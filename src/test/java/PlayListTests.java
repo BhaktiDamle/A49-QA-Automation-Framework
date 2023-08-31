@@ -1,3 +1,4 @@
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import Pages.BaseTest;
@@ -9,7 +10,6 @@ public class PlayListTests extends BaseTest {
     LoginPage loginPage;
     PlaylistPage playlistPage;
 
-    public String newPlaylistName = "MyRenamedPlaylist";
 
     @BeforeClass
     void login() {
@@ -23,7 +23,8 @@ public class PlayListTests extends BaseTest {
     public void renamePlaylist() {
         playlistPage.doubleClickMyPlaylist();
         playlistPage.enterNewPlaylistName();
-        playlistPage.doesPlaylistExists();
+        Assert.assertTrue(doesPlaylistExists());
+
     }
 
 }
