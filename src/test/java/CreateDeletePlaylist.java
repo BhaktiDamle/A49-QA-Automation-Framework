@@ -8,16 +8,18 @@ import org.testng.annotations.Test;
 
 public class CreateDeletePlaylist extends BaseTest {
 
-    String newPlayListName = "My Playlist 3";
+    String newPlayListName = "My New Playlist 3";
 
     @Test
-public void createDeletePlaylist(){
+public void createDeletePlaylist() throws InterruptedException {
 
         provideEmail("bhakti.damle@testpro.io");
         providePassword("Mangodesk234!");
         clickSubmit();
-        clickOnCreatePlaylistButton() ;
-        enterNewPlaylistName(newPlayListName);
+        Thread.sleep(400);
+        clickOnCreatePlaylistButton();
+        clickPlaylistOption();
+        enterNewPlaylistName();
         clickOnDeletePlaylistBtn();
     }
 
@@ -28,18 +30,27 @@ public void createDeletePlaylist(){
 
     }
 
-    public void enterNewPlaylistName(String newPlayListName) {
-        WebElement playlistInputField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='name']")));
-        playlistInputField.sendKeys(Keys.chord(Keys.COMMAND,"A", Keys.BACK_SPACE));
-        playlistInputField.sendKeys(newPlayListName);
-        playlistInputField.sendKeys(Keys.ENTER);
-    }
-    public void clickOnDeletePlaylistBtn() {
-        WebElement deletePlaylistBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".del.btn-delete-playlist")));
-        actions.click(deletePlaylistBtn).perform();
+    public void clickPlaylistOption() {
+
+        WebElement playlistOptionElement = driver.findElement(By.xpath("*//li[contains(text(),'New Playlist')]"));
+        playlistOptionElement.click();
+
     }
 
-}
 
+        public void enterNewPlaylistName(){
+            WebElement playlistInputField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='name']")));
+            playlistInputField.sendKeys(Keys.chord(Keys.COMMAND, "A", Keys.BACK_SPACE));
+            playlistInputField.sendKeys(newPlayListName);
+            playlistInputField.sendKeys(Keys.ENTER);
+        }
+
+        public void clickOnDeletePlaylistBtn(){
+            WebElement deletePlaylistBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".del.btn-delete-playlist")));
+            actions.click(deletePlaylistBtn).perform();
+        }
+
+
+    }
 
 
