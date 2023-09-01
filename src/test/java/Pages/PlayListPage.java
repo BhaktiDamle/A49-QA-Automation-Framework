@@ -41,6 +41,13 @@ public class PlayListPage extends BasePage {
         return playlistElement.isDisplayed();
     }
 
+    public void clickOnCreatePlaylistButton() {
+
+        WebElement plusIconElement = driver.findElement(By.cssSelector("[data-testid='sidebar-create-playlist-btn']"));
+        plusIconElement.click();
+
+    }
+
     public void clickPlaylistOption() {
 
         WebElement playlistOptionElement = driver.findElement(By.xpath("*//li[contains(text(),'New Playlist')]"));

@@ -15,6 +15,7 @@ public class HomePageTests extends BaseTest{
         homePage.clickAllSongs();
         homePage.contextClickFirstSong();
     }
+@Test
 
 public void hoverPlay(){
 

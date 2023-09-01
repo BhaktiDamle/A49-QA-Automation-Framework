@@ -19,18 +19,19 @@ public class PlayListTests extends BaseTest {
 
     }
 
-    public void createDeletePlaylist() throws InterruptedException {
+    @Test
+    public void createPlaylist() throws InterruptedException {
 
         LoginPage loginPage = new LoginPage(driver);
         PlayListPage playListPage = new PlayListPage(driver);
         loginPage.loginCorrectCred();
         Thread.sleep(2000);
-        playListPage.clickOnDeletePlaylistBtn();
+        playListPage.clickOnCreatePlaylistButton();
         playListPage.clickPlaylistOption();
         playListPage.enterNewPlaylistName();
         playListPage.clickOnDeletePlaylistBtn();
-    }
 
+    }
 
 }
 
