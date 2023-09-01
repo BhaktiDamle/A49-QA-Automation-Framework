@@ -3,8 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+
 
 public class CreateDeletePlaylist extends BaseTest {
 
@@ -16,10 +15,10 @@ public void createDeletePlaylist() throws InterruptedException {
         provideEmail("bhakti.damle@testpro.io");
         providePassword("Mangodesk234!");
         clickSubmit();
-        Thread.sleep(400);
+        Thread.sleep(2000);
         clickOnCreatePlaylistButton();
         clickPlaylistOption();
-        enterNewPlaylistName();
+        enterNewPlaylistName(newPlayListName);
         clickOnDeletePlaylistBtn();
     }
 
@@ -38,7 +37,7 @@ public void createDeletePlaylist() throws InterruptedException {
     }
 
 
-        public void enterNewPlaylistName(){
+        public void enterNewPlaylistName(String newPlayListName){
             WebElement playlistInputField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='name']")));
             playlistInputField.sendKeys(Keys.chord(Keys.COMMAND, "A", Keys.BACK_SPACE));
             playlistInputField.sendKeys(newPlayListName);
