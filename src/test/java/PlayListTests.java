@@ -10,7 +10,7 @@ public class PlayListTests extends BaseTest {
     @Test
     public void renamePlaylist() {
 
-        LoginPage loginPage= new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         PlayListPage playListPage = new PlayListPage(driver);
         loginPage.loginCorrectCred();
         playListPage.doubleClickMyPlaylist();
@@ -18,6 +18,19 @@ public class PlayListTests extends BaseTest {
         Assert.assertTrue(playListPage.doesPlaylistExists());
 
     }
+
+    public void createDeletePlaylist() throws InterruptedException {
+
+        LoginPage loginPage = new LoginPage(driver);
+        PlayListPage playListPage = new PlayListPage(driver);
+        loginPage.loginCorrectCred();
+        Thread.sleep(2000);
+        playListPage.clickOnDeletePlaylistBtn();
+        playListPage.clickPlaylistOption();
+        playListPage.enterNewPlaylistName();
+        playListPage.clickOnDeletePlaylistBtn();
+    }
+
 
 }
 
