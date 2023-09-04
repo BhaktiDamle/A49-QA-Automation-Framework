@@ -10,9 +10,7 @@ import org.testng.Assert;
 
 public class PlayListPage extends BasePage {
 
-    public String newPlaylistName = "MyRenamedPlaylist";
-
-    public PlayListPage(WebDriver driver) {
+   public PlayListPage(WebDriver driver) {
         super(driver);
     }
 
@@ -22,7 +20,7 @@ public class PlayListPage extends BasePage {
     @FindBy(css = "[name='name']" )
     WebElement playlistNameField;
 
-    @FindBy(xpath = "//a[text()='" + newPlaylistName + "']")
+    @FindBy(css= "#playlists  li:nth-child(5)")
     WebElement playlistElement;
 
     @FindBy(css = "[data-testid='sidebar-create-playlist-btn']")
@@ -44,7 +42,7 @@ public class PlayListPage extends BasePage {
     public PlayListPage enterNewPlaylistName() {
         wait.until(ExpectedConditions.visibilityOf(playListElement));
         playlistNameField.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
-        playlistNameField.sendKeys(newPlaylistName);
+        playlistNameField.sendKeys("TobeDeletedPL");
         playlistNameField.sendKeys(Keys.ENTER);
         return this;
     }
@@ -59,7 +57,6 @@ public class PlayListPage extends BasePage {
 
         wait.until(ExpectedConditions.elementToBeClickable(plusIconElement)).click();
         return this;
-
     }
 
     public PlayListPage clickPlaylistOption() {
@@ -73,6 +70,7 @@ public class PlayListPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(deletePlaylistBtn));
         actions.click(deletePlaylistBtn).perform();
         return this;
+
     }
 
 

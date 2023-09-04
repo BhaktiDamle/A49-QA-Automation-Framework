@@ -22,29 +22,25 @@ public class LoginPage extends BasePage {
     WebElement submitButton;
 
 
-    public LoginPage loginCorrectCred() {
-        provideEmail("bhakti.damle@testpro.io");
-        providePassword("Mangodesk234!");
-        clickSubmit();
-        return this;
-    }
-
-    public void provideEmail(String email) {
+    public LoginPage provideEmail(String email) {
         wait.until(ExpectedConditions.visibilityOf(emailField));
         emailField.clear();
         emailField.sendKeys(email);
+        return this;
 
     }
 
-    public void providePassword(String password) {
+    public LoginPage providePassword(String password) {
         wait.until(ExpectedConditions.visibilityOf(passwordField));
         passwordField.clear();
         passwordField.sendKeys(password);
+        return this;
 
     }
 
-    public void clickSubmit() {
+    public LoginPage clickSubmit() {
         wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
+        return this;
 
     }
 }

@@ -9,7 +9,13 @@ public class LoginTests extends BaseTest {
     public void login() {
 
         loginPage = new LoginPage(driver);
-        loginPage.loginCorrectCred();
+        loginPage.provideEmail("bhakti.damle@testpro.io")
+                  .providePassword("Mangodesk234!")
+                  .clickSubmit();
+
+
+
+
     }
 
 
