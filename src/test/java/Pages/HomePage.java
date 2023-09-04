@@ -31,7 +31,7 @@ public class HomePage extends BasePage {
     public HomePage contextClickFirstSong() {
 
         wait.until(ExpectedConditions.visibilityOf(firstSongElement));
-        actions.contextClick(firstSongElement);
+        actions.contextClick(firstSongElement).perform();
         return this;
     }
 

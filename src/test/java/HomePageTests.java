@@ -13,8 +13,8 @@ public class HomePageTests extends BaseTest{
         LoginPage loginPage= new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
         loginPage.loginCorrectCred();
-        homePage.clickAllSongs();
-        homePage.contextClickFirstSong();
+        homePage.clickAllSongs()
+                .contextClickFirstSong();
     }
     @Test
 
@@ -23,7 +23,7 @@ public class HomePageTests extends BaseTest{
         LoginPage loginPage= new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
         loginPage.loginCorrectCred();
-        homePage.clickAllSongs();
-        homePage.hoverOverPlayButton();
+        homePage.clickAllSongs()
+                .hoverOverPlayButton();
     }
 }

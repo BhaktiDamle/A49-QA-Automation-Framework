@@ -36,7 +36,7 @@ public class PlayListPage extends BasePage {
 
     public PlayListPage doubleClickMyPlaylist() {
 
-        wait.until(ExpectedConditions.visibilityOf(playListElement);
+        wait.until(ExpectedConditions.visibilityOf(playListElement));
         actions.doubleClick(playListElement).perform();
         return this;
     }

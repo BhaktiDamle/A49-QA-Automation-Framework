@@ -12,8 +12,7 @@ public class PlayListTests extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         PlayListPage playListPage = new PlayListPage(driver);
         loginPage.loginCorrectCred();
-        playListPage.doubleClickMyPlaylist();
-        playListPage.enterNewPlaylistName();
+        playListPage.doubleClickMyPlaylist().enterNewPlaylistName();
         Assert.assertTrue(playListPage.doesPlaylistExists());
 
     }
@@ -29,6 +28,9 @@ public class PlayListTests extends BaseTest {
         playListPage.clickPlaylistOption();
         playListPage.enterNewPlaylistName();
         playListPage.clickOnDeletePlaylistBtn();
+
+
+
 
     }
 

@@ -29,24 +29,23 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage provideEmail(String email) {
+    public void provideEmail(String email) {
         wait.until(ExpectedConditions.visibilityOf(emailField));
         emailField.clear();
         emailField.sendKeys(email);
-        return this;
+
     }
 
-    public LoginPage providePassword(String password) {
+    public void providePassword(String password) {
         wait.until(ExpectedConditions.visibilityOf(passwordField));
         passwordField.clear();
         passwordField.sendKeys(password);
-        return this;
 
     }
 
-    public LoginPage clickSubmit() {
+    public void clickSubmit() {
         wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
-        return this;
+
     }
 }
 
