@@ -12,7 +12,9 @@ public class HomePageTests extends BaseTest{
 
         LoginPage loginPage= new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
-        loginPage.loginCorrectCred();
+        loginPage.provideEmail("bhakti.damle@testpro.io")
+                .providePassword("Mangodesk234!")
+                .clickSubmit();
         homePage.clickAllSongs()
                 .contextClickFirstSong();
     }
@@ -22,7 +24,9 @@ public class HomePageTests extends BaseTest{
 
         LoginPage loginPage= new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
-        loginPage.loginCorrectCred();
+        loginPage.provideEmail("bhakti.damle@testpro.io")
+                .providePassword("Mangodesk234!")
+                .clickSubmit();
         homePage.clickAllSongs()
                 .hoverOverPlayButton();
     }

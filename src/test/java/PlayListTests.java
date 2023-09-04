@@ -11,7 +11,9 @@ public class PlayListTests extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
         PlayListPage playListPage = new PlayListPage(driver);
-        loginPage.loginCorrectCred();
+        loginPage.provideEmail("bhakti.damle@testpro.io")
+                 .providePassword("Mangodesk234!")
+                 .clickSubmit();
         playListPage.doubleClickMyPlaylist().enterNewPlaylistName();
         Assert.assertTrue(playListPage.doesPlaylistExists());
 
@@ -22,12 +24,14 @@ public class PlayListTests extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
         PlayListPage playListPage = new PlayListPage(driver);
-        loginPage.loginCorrectCred();
+        loginPage.provideEmail("bhakti.damle@testpro.io")
+                .providePassword("Mangodesk234!")
+                .clickSubmit();
         Thread.sleep(2000);
-        playListPage.clickOnCreatePlaylistButton();
-        playListPage.clickPlaylistOption();
-        playListPage.enterNewPlaylistName();
-        playListPage.clickOnDeletePlaylistBtn();
+        playListPage.clickOnCreatePlaylistButton()
+                .clickPlaylistOption()
+                .enterNewPlaylistName()
+                .clickOnDeletePlaylistBtn();
 
 
 
