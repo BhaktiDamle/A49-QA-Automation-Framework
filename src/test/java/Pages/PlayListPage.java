@@ -15,13 +15,13 @@ public class PlayListPage extends BasePage {
     }
 
     @FindBy(xpath = "//*[@id='playlists']/ul/li[3]")
-    WebElement playListElement;
+    WebElement playlistElement;
 
-    @FindBy(css = "[name='name']" )
+    @FindBy(css = "[name='name']")
     WebElement playlistNameField;
 
     @FindBy(css= "#playlists  li:nth-child(5)")
-    WebElement playlistElement;
+    WebElement playListElementExists  ;
 
     @FindBy(css = "[data-testid='sidebar-create-playlist-btn']")
     WebElement plusIconElement;
@@ -34,13 +34,13 @@ public class PlayListPage extends BasePage {
 
     public PlayListPage doubleClickMyPlaylist() {
 
-        wait.until(ExpectedConditions.visibilityOf(playListElement));
-        actions.doubleClick(playListElement).perform();
+        wait.until(ExpectedConditions.visibilityOf(playlistElement));
+        actions.doubleClick(playlistElement).perform();
         return this;
     }
 
     public PlayListPage enterNewPlaylistName() {
-        wait.until(ExpectedConditions.visibilityOf(playListElement));
+        wait.until(ExpectedConditions.visibilityOf(playlistNameField));
         playlistNameField.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         playlistNameField.sendKeys("TobeDeletedPL");
         playlistNameField.sendKeys(Keys.ENTER);
@@ -49,8 +49,8 @@ public class PlayListPage extends BasePage {
 
     public boolean doesPlaylistExists() {
 
-       wait.until(ExpectedConditions.visibilityOf(playlistElement));
-      return playListElement.isDisplayed();
+       wait.until(ExpectedConditions.visibilityOf(playListElementExists ));
+      return playListElementExists .isDisplayed();
     }
 
     public PlayListPage clickOnCreatePlaylistButton() {

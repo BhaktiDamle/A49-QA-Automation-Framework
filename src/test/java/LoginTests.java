@@ -3,7 +3,7 @@ import Pages.LoginPage;
 
 public class LoginTests extends BaseTest {
 
-    LoginPage loginPage = new LoginPage(driver);
+    LoginPage loginPage;
 
     @Test
     public void login() {

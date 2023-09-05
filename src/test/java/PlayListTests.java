@@ -14,7 +14,8 @@ public class PlayListTests extends BaseTest {
         loginPage.provideEmail("bhakti.damle@testpro.io")
                  .providePassword("Mangodesk234!")
                  .clickSubmit();
-        playListPage.doubleClickMyPlaylist().enterNewPlaylistName();
+        playListPage.doubleClickMyPlaylist()
+                    .enterNewPlaylistName();
         Assert.assertTrue(playListPage.doesPlaylistExists());
 
     }
