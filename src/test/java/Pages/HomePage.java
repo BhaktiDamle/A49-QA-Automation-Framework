@@ -18,8 +18,8 @@ public class HomePage extends BasePage {
     @FindBy(css = "#songsWrapper tr:nth-child(1) td.title")
     WebElement firstSongElement;
 
-    @FindBy(xpath = "//span[@data-testid='play-btn']")
-    WebElement playElement;
+    @FindBy(css = "#sidebar li:nth-child(5)")
+    WebElement artistsElement;
 
 
     public HomePage clickAllSongs() {
@@ -35,10 +35,10 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public HomePage hoverOverPlayButton() {
+    public HomePage hoverOverArtists() {
 
-       wait.until(ExpectedConditions.visibilityOf(playElement));
-        actions.moveToElement(playElement).perform();
+       wait.until(ExpectedConditions.visibilityOf(artistsElement));
+        actions.moveToElement(artistsElement).perform();
         return this;
     }
 }

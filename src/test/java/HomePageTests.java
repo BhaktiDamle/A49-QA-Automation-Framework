@@ -28,6 +28,6 @@ public class HomePageTests extends BaseTest{
                 .providePassword("Mangodesk234!")
                 .clickSubmit();
         homePage.clickAllSongs()
-                .hoverOverPlayButton();
+                .hoverOverArtists();
     }
 }
