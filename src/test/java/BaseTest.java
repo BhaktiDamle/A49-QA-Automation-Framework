@@ -47,6 +47,7 @@ public class BaseTest {
             default:
                 return setupChrome();
         }
+    }
 
         public WebDriver setupChrome() {
             WebDriverManager.chromedriver().setup();
