@@ -19,9 +19,16 @@ public class BaseTest {
         driver = setupBrowser(browser);
     }
 
+    @BeforeMethod
+
+    public void navigateToPage() {
+
+        driver.get(url);
+    }
+
     WebDriver setupBrowser(String browser) throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
-        String gridURL = "http://192.168.1.233:4444";
+        String gridURL = "http://192.168.86.44:4444/";
         switch (browser) {
 
             case "grid-chrome":
@@ -47,7 +54,8 @@ public class BaseTest {
 
     @AfterMethod
 
-    public void closeBrowser() {
+    public void closeBrowser()
+    {
         driver.quit();
     }
 }
