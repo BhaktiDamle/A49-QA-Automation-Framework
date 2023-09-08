@@ -7,8 +7,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 import java.net.MalformedURLException;
 import java.net.URI;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.AfterMethod;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -29,9 +27,7 @@ public class BaseTest {
 
         driver.get(url);
     }
-
-
-    public  WebDriver setupBrowser(String browser) throws MalformedURLException {
+    public WebDriver setupBrowser(String browser) throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
         String gridURL = "http://192.168.86.44:4444/";
         switch (browser) {
@@ -48,41 +44,36 @@ public class BaseTest {
                 return setupChrome();
         }
     }
+    public WebDriver setupChrome() {
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--disable-notifications");
+        options.addArguments("--start-maximized");
+        driver = new ChromeDriver(options);
+        return driver;
+    }
+    public WebDriver lambdaTest() throws MalformedURLException {
 
-        public WebDriver setupChrome() {
-            WebDriverManager.chromedriver().setup();
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--remote-allow-origins=*");
-            options.addArguments("--disable-notifications");
-            options.addArguments("--start-maximized");
-            driver = new ChromeDriver(options);
-            return driver;
-        }
-
-
-        public WebDriver lambdaTest() throws MalformedURLException {
-
-            String hubURL = "https://hub.lambdatest.com/wd/hub";
-            ChromeOptions browserOptions = new ChromeOptions();
-            browserOptions.setPlatformName("Windows 10");
-            browserOptions.setBrowserVersion("117.0");
-            HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-            ltOptions.put("username", "damle.bhakti");
-            ltOptions.put("accessKey", "cx0IaioTVsupr92xov2H9X0y9zMvIlAmSN6yvbwO4F1srS2NZq");
-            ltOptions.put("project", "Untitled");
-            ltOptions.put("selenium_version", "4.0.0");
-            ltOptions.put("w3c", true);
-            browserOptions.setCapability("LT:Options", ltOptions);
-            return new RemoteWebDriver(new URL(hubURL), browserOptions);
-
-        }
-
-
-        @AfterMethod
-
-        public void closeBrowser () {
-
-            driver.quit();
-        }
+        String hubURL = "https://hub.lambdatest.com/wd/hub";
+        ChromeOptions browserOptions = new ChromeOptions();
+        browserOptions.setPlatformName("Windows 10");
+        browserOptions.setBrowserVersion("117.0");
+        HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+        ltOptions.put("username", "damle.bhakti");
+        ltOptions.put("accessKey", "cx0IaioTVsupr92xov2H9X0y9zMvIlAmSN6yvbwO4F1srS2NZq");
+        ltOptions.put("project", "Untitled");
+        ltOptions.put("selenium_version", "4.0.0");
+        ltOptions.put("w3c", true);
+        browserOptions.setCapability("LT:Options", ltOptions);
+        return new RemoteWebDriver(new URL(hubURL), browserOptions);
 
     }
+    @AfterMethod
+
+    public void closeBrowser() {
+
+        driver.quit();
+    }
+
+}
