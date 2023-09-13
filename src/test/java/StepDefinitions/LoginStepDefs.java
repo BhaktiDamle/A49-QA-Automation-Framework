@@ -45,17 +45,16 @@ public class LoginStepDefs {
     }
 
     @When("I enter Email {string}")
-    public void iEnterEmail(String arg0) {
+    public void iEnterEmail(String email) {
 
-        WebElement emailField = driver.findElement(By.xpath("//input[@type='email']"));
-        emailField.clear();
-        emailField.sendKeys();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='email']"))).sendKeys(email);
+
     }
 
     @And("I enter password {string}")
-    public void iEnterPassword(String arg0) {
+    public void iEnterPassword(String password) {
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='password']"))).sendKeys();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='password']"))).sendKeys(password);
     }
 
     @And("I submit")
