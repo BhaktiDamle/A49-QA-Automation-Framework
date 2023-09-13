@@ -15,9 +15,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
 import java.time.Duration;
 
-public class LoginMyStepdefs {
+public class LoginStepDefs {
 
     WebDriver driver;
 
@@ -34,9 +35,10 @@ public class LoginMyStepdefs {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
+
+
     @Given("I open Login Page")
     public void iOpenLoginPage() {
-
         String url = "https://qa.koel.app/";
         driver.get(url);
 
@@ -59,8 +61,7 @@ public class LoginMyStepdefs {
     @And("I submit")
     public void iSubmit() {
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='password']"))).sendKeys();
-
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']"))).click();
     }
 
     @Then("I am logged in")
@@ -75,5 +76,4 @@ public class LoginMyStepdefs {
 
         driver.quit();
     }
-
 }
