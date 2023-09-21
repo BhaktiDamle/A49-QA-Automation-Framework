@@ -11,8 +11,8 @@
             <class name="LoginTests">
                 <methods>
 
-<!--                    <include name="loginIncorrectEmailPasswordCred"/>-->
-<!--                    <include name="loginValidEmailEmptyPassword"/>-->
+                    <include name="loginIncorrectEmailPasswordCred"/>
+                   <include name="loginValidEmailEmptyPassword"/>
 
                 </methods>
             </class>

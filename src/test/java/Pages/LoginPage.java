@@ -14,6 +14,7 @@ public class LoginPage extends BasePage {
         provideEmail("bhakti.damle@testpro.io");
         providePassword("Mangodesk234!");
         clickSubmit();
+        Assert.assertTrue(isAvatarDisplayed());
     }
 
     public void loginIncorrectEmailPasswordCred(){
@@ -46,5 +47,10 @@ public class LoginPage extends BasePage {
     {
         WebElement submitButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='submit']")));
         submitButton.click();
+    }
+
+    public boolean isAvatarDisplayed(){
+        WebElement avatarIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img.avatar")));
+        return avatarIcon.isDisplayed();
     }
 }
