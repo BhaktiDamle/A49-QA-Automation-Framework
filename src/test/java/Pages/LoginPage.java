@@ -51,6 +51,6 @@ public class LoginPage extends BasePage {
 
     public boolean isAvatarDisplayed(){
         WebElement avatarIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img.avatar")));
-        return avatarIcon.isDisplayed();
+        return isAvatarDisplayed();
     }
 }
