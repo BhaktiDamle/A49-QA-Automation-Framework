@@ -1,19 +1,32 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import Pages.LoginPage;
 
 public class LoginTests extends BaseTest {
 
-    LoginPage loginPage;
 
     @Test
-    public void login() {
 
-        loginPage = new LoginPage(driver);
-        loginPage.loginCorrectCred();
-        loginPage.loginIncorrectEmailPasswordCred();
-        loginPage.loginValidEmailEmptyPassword();
-
+    public void loginCorrectCred() {
+        provideEmail("bhakti.damle@testpro.io");
+        providePassword("Mangodesk234!");
+        clickSubmit();
+        Assert.assertTrue(isAvatarDisplayed());
     }
+@Test
+    public void loginIncorrectEmailPasswordCred(){
+        provideEmail("bhakti@testpro.io");
+        providePassword("Mangodesk");
+        clickSubmit();
+        Assert.assertEquals(driver.getCurrentUrl()," https://qa.koel.app/");
+    }
+@Test
+    public void loginValidEmailEmptyPassword(){
 
+        provideEmail("bhakti@testpro.io");
+        providePassword("");
+        clickSubmit();
+        Assert.assertEquals(driver.getCurrentUrl(), " https://qa.koel.app/");
+    }
 
 }

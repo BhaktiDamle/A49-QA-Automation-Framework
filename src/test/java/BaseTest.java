@@ -1,5 +1,8 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeSuite;
 import org.openqa.selenium.WebDriver;
@@ -38,6 +41,31 @@ public class BaseTest {
     public void navigateToPage() {
 
         driver.get(url);
+    }
+
+    public void provideEmail(String email)
+    {
+        WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='email']")));
+        emailField.clear();
+        emailField.sendKeys(email);
+    }
+
+
+    public void providePassword(String password)
+    {
+        WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='password']")));
+        passwordField.clear();
+        passwordField.sendKeys(password);
+    }
+    public void clickSubmit()
+    {
+        WebElement submitButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@type='submit']")));
+        submitButton.click();
+    }
+
+    public boolean isAvatarDisplayed(){
+        WebElement avatarIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img.avatar")));
+        return isAvatarDisplayed();
     }
 
     @AfterMethod
