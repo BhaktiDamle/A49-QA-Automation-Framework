@@ -8,7 +8,10 @@
 
     <test name="Regression Tests" preserve-order="false">
         <classes>
+            <class name="BaseTest"/>
             <class name="LoginTests">
+
+
 
             </class>
         </classes>
