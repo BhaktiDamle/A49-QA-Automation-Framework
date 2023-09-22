@@ -11,7 +11,7 @@
             <class name="LoginTests">
                 <methods>
 
-                    <include name="loginCorrectCred"/>
+                    <include name="login"/>
 
                 </methods>
             </class>
