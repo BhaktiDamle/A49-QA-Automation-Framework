@@ -63,9 +63,10 @@ public class BaseTest {
         submitButton.click();
     }
 
-    public boolean isAvatarDisplayed(){
+    public void clickAvatarIcon(){
         WebElement avatarIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img.avatar")));
-        return isAvatarDisplayed();
+        avatarIcon.click();
+
     }
 
     @AfterMethod
