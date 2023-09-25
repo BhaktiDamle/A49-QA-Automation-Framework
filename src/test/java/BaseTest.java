@@ -15,7 +15,7 @@ public class BaseTest {
 
     public WebDriver driver;
 
-    public String url = " https://qa.koel.app/";
+    public String url = "https://qa.koel.app/";
 
     public WebDriverWait wait;
 
@@ -37,20 +37,16 @@ public class BaseTest {
         url = BaseURL;
         navigateToPage();
     }
-
     public void navigateToPage() {
 
         driver.get(url);
     }
-
     public void provideEmail(String email)
     {
         WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='email']")));
         emailField.clear();
         emailField.sendKeys(email);
     }
-
-
     public void providePassword(String password)
     {
         WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='password']")));

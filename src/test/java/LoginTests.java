@@ -13,23 +13,24 @@ public class LoginTests extends BaseTest {
         clickAvatarIcon();
     }
 
-@Test
+    @Test
     public void loginIncorrectEmailPasswordCred() throws InterruptedException {
         provideEmail("bhakti@testpro.io");
         providePassword("Mangodesk");
         clickSubmit();
         Thread.sleep(2000);
-        Assert.assertEquals(driver.getCurrentUrl(), " https://qa.koel.app/");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://qa.koel.app/");
     }
 
 
-@Test
+    @Test
     public void loginValidEmailEmptyPassword() throws InterruptedException {
 
-       provideEmail("bhakti@testpro.io");
-     providePassword("");
-      clickSubmit();Thread.sleep(2000);
-      Assert.assertEquals(driver.getCurrentUrl(), " https://qa.koel.app/");
-  }
+        provideEmail("bhakti@testpro.io");
+        providePassword("");
+        clickSubmit();
+        Thread.sleep(2000);
+        Assert.assertEquals(driver.getCurrentUrl(), "https://qa.koel.app/");
+    }
 
 }
